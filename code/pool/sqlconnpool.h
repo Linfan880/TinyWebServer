@@ -27,8 +27,8 @@ public:
     void ClosePool();
 
 private:
-    SqlConnPool();
-    ~SqlConnPool();
+    SqlConnPool();  //构造
+    ~SqlConnPool(); //析构
 
     int MAX_CONN_;  //最大连接数
     int useCount_;  //使用的连接数
