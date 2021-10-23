@@ -17,11 +17,10 @@
 
 class Log {
 public:
-    void init(int level, const char* path = "./log",
-              const char* suffix =".log",
+    void init(int level, const char* path = "./log", const char* suffix =".log",
               int maxQueueCapacity = 1024);
 
-    static Log* Instance();
+    static Log* Instance(); //单例
     static void FlushLogThread();
 
     void write(int level, const char *format,...);

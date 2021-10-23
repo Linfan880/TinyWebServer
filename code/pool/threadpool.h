@@ -12,6 +12,7 @@
 #include <functional>
 class ThreadPool{
 public:
+    //explicit : 无法进行隐式类型转换
     explicit ThreadPool(size_t threadCount = 8): pool_(std::make_shared<Pool>()){
         assert(threadCount>0);
         for(size_t i=0;i<threadCount;i++)
@@ -62,7 +63,6 @@ private:
         std::condition_variable cond;   //条件变量
         bool isClosed;  //是否关闭
         std::queue<std::function<void()>> tasks;    //回调任务
-
     };
     std::shared_ptr<Pool> pool_;
 };

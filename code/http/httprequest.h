@@ -19,10 +19,10 @@
 class HttpRequest {
 public:
     enum PARSE_STATE {
-        REQUEST_LINE,
-        HEADERS,
-        BODY,
-        FINISH,
+        REQUEST_LINE,   //请求行
+        HEADERS,        //请求头
+        BODY,           //请求体
+        FINISH,         //结束
     };
 
     enum HTTP_CODE {
